@@ -1261,7 +1261,7 @@
 						height: 17px;
 						z-index: 9999;
 						left: 50%;
-						bottom: -38px;
+						bottom: -0.76em;
 						margin-left: -0.5em;
 						background-image: url(images/triangle.png);
 						-moz-transition: border-bottom-width .25s ease-in-out;
