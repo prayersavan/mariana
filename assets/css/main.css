@@ -759,7 +759,7 @@
 /* Basic */
 
 	body {
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, 'Source Sans Pro', Arial, "Lucida Grande", sans-serif; 
 		font-weight: 300;
 		color: #777777;
 	}
@@ -1070,8 +1070,8 @@
 		position: relative;
 		display: inline-block;
 		color: #ffffff;
-		width: 1em;
-		height: 1em;
+		width: 2.5em;
+		/*height: 1em;*/
 		line-height: 0.9em;
 	}
 
@@ -1246,7 +1246,7 @@
 
 			#nav {
 				text-align: center;
-				height: 4.25em;
+				height: 3.25em;
 				cursor: default;
 			}
 
@@ -1273,7 +1273,7 @@
 						height: 17px;
 						z-index: 9999;
 						left: 50%;
-						bottom: -0.76em;
+						bottom: -0.87em;
 						margin-left: -0.5em;
 						background-image: url(images/triangle.png);
 						opacity: 0;
@@ -1286,12 +1286,14 @@
 					#nav a span {
 						display: block;
 						position: absolute;
-						background: #222222;
-						color: #ffffff;
-						top: -2.75em;
-						font-size: 0.3em;
+						/*background: #222222;*/
+						color: #acacac;
+						top: -2em;
+						font-size: 0.35em;
+						letter-spacing: 1px;
 						height: 2.25em;
 						line-height: 2.25em;
+						text-transform: uppercase;
 						left: 50%;
 						-moz-transition: opacity .25s ease-in-out;
 						-webkit-transition: opacity .25s ease-in-out;
@@ -1301,7 +1303,12 @@
 						margin-left: -2.75em;
 					}
 
-						#nav a span:after {
+					#nav a span:hover {
+                         color: #000;
+                         transition: 0.5s;
+					}
+
+						/*#nav a span:after {
 							content: '';
 							display: block;
 							position: absolute;
@@ -1311,11 +1318,16 @@
 							border-top: solid 0.6em #222222;
 							border-left: solid 0.6em transparent;
 							border-right: solid 0.6em transparent;
-						}
+						}*/
 
 					#nav a.active {
 						opacity: 1.0;
-					}
+				        }
+
+				        #nav a.active span {
+				        font-weight: 400;
+				        color: #333;
+				        }
 
 						#nav a.active:after {
 							border-bottom-width: 0.5em;
