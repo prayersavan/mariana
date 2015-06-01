@@ -53,6 +53,7 @@
 					$nav = $('#nav'), $nav_links = $nav.find('a'),
 					$jumplinks = $('.jumplink'),
 					$form = $('form'),
+					arrows = [],
 					panels = [],
 					activePanelId = null,
 					firstPanelId = null,
@@ -109,7 +110,7 @@
 
 							// Change nav link (if it exists).
 								$nav_links.removeClass('active');
-								$nav_links.filter('[href="#' + id + '"]').addClass('active');
+								
 
 							// Change hash.
 								if (i == 0)
@@ -130,6 +131,7 @@
 
 							// Fade out active panel.
 								$footer.fadeTo(settings.fadeSpeed, 0.0001);
+
 								panels[activePanelId].fadeOut(instant ? 0 : settings.fadeSpeed, function() {
 
 									// Set new active.
@@ -150,8 +152,9 @@
 
 												// Fade in new active panel.
 													$footer.fadeTo(instant ? 0 : settings.fadeSpeed, 1.0);
+													// fade in the arrow icon
+													$nav_links.filter('[href="#' + id + '"]').addClass('active');
 													panels[activePanelId].fadeIn(instant ? 0 : settings.fadeSpeed, function() {
-
 														// Unlock.
 															isLocked = false;
 
@@ -174,7 +177,6 @@
 							e.stopPropagation();
 
 							id = href.substring(1);
-
 							if (id in panels)
 								panels[id]._activate();
 
